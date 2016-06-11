@@ -3,7 +3,9 @@
 /*
         Author:       Hina Patel (StuentID: 821021425)
         File Name:    app.js
-        Description:  Java Script file for COMP 125- Assignment 1 web application. 
+        Description:  Java Script file for COMP 125- Assignment 1 and 2 web application. 
+        A1 Link:
+        A2 Link:
 */
 
 // IIFE - Immediately Invoked Function Expression
@@ -43,6 +45,36 @@
     if(documentElements[index]){
       documentElements[index].innerHTML = documentElementContent[index];
     }
+  }
+
+  /* ----------------Assignment 2------------------------------- */
+
+  // get reference to form input fields
+  var firstName = document.getElementById("firstName");
+  var lastName = document.getElementById("lastName");
+  var inputEmail = document.getElementById("inputEmail");
+  var contactNumber = document.getElementById("contactNumber");
+  var message = document.getElementById("message");
+
+  //form reference 
+  var contactForm = document.getElementById("contactForm");
+  
+  // Form submit event listener
+  contactForm.addEventListener("submit", function(event){
+      event.preventDefault(); 
+      showFromInput();  
+      contactForm.reset();
+  });
+
+  /* Display form details on console */
+  function showFromInput(){
+    console.log("------------------------------------------");
+    console.log(" First Name:  " + firstName.value);
+    console.log(" Last Name:   " + lastName.value);
+    console.log(" Email:       " + inputEmail.value);
+    console.log(" Contact No:  " + contactNumber.value);
+    console.log(" Message:     " + message.value);
+    console.log("------------------------------------------");
   }
   
 })();
